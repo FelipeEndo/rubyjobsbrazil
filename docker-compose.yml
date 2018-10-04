@@ -1,0 +1,20 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: rails s -b 0.0.0.0
+    ports:
+      - 80:3000
+    volumes:
+      - .:/rubyjobsbrazil
+    links:
+      - database
+  database:
+    image: mysql/mysql-server
+    ports:
+      - "3306:3306"
+    volumes:
+      - rubyjobsbrazil-data:/var/lib/mysql/data 
+
+volumes:
+  rubyjobsbrazil-data:

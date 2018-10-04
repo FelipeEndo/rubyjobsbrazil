@@ -16,8 +16,8 @@ default: &default
   encoding: utf8mb4
   collation: utf8mb4_unicode_ci
   username: root
-  password:
-  host: 127.0.0.1
+  password: '123'
+  host: localhost
 
 development:
   <<: *default
